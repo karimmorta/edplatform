@@ -11,8 +11,26 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class=" bg-gray-900 text-white">
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-black text-white">
+    <header class="container py-4 mx-auto w-full border-b-white border-b">
+      <div class="mx-auto w-full">
+        <h1 class="text-3xl"><%=link_to 'EdPlatform', root_path %></h1>
+      </div>
+    </header>
+
+    <main class="container mx-auto mt-28 flex flex-col">
+      <nav class="main-nav text-xs mb-4">
+        <p class="text-2xl">
+          <% if action_name == 'details' %>
+            <%= link_to '< Back to Courses', root_path %>
+          <% end %>
+        <p>
+        <br/>
+        <%= link_to 'Home > Courses', root_path %>
+        <% if action_name == 'details' %>
+        > Ruby on Rails : Master the fundamentals
+        <% end %>
+      </nav>
       <%= yield %>
     </main>
   </body>

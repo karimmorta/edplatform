@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+.side {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      /* "header  header" */
+      /* "nav     nav" */ "sidebar content";
+    /* "ad      footer"; */
+  }
+}
