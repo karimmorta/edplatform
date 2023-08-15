@@ -19,27 +19,9 @@
     </header>
 
     <main class="container mx-auto mt-28 flex flex-col">
-      <nav class="main-nav text-xs mb-4">
-        <p class="text-2xl">
-          <% if action_name == 'details' %>
-            <%= link_to '< Back to Courses', root_path %>
-          <% end %>
-        <p>
-        <br/>
-        <% if controller_name == 'courses' %>
-          <%= link_to 'Home > Courses', root_path %> 
-        <% end %>
-        <% if action_name == 'details' %>
-        > Ruby on Rails : Master the fundamentals
-        <% end %>
-      </nav>
-      <% if controller_name == 'devise' %>
-        <div class="container mx-auto text-center">
-      <% end %>
-        <%= yield %>
-         <% if controller_name == 'devise' %>
-          </div>
-        <% end %>
+     <div class="mx-auto">
+            <%= yield %>
+        </div>
     </main>
   </body>
 </html>
