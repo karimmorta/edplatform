@@ -12,9 +12,18 @@
   </head>
 
   <body class="bg-black text-white">
-    <header class="container py-4 mx-auto w-full border-b-white border-b">
+    <header class="flex container py-4 mx-auto w-full border-b-white border-b items-center">
       <div class="mx-auto w-full">
         <h1 class="text-3xl"><%=link_to 'EdPlatform', root_path %></h1>
+      </div>
+
+      <div>
+        <div class="mx-auto w-full">
+          <% if current_user %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: 'delete'} %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+          <% end %>
       </div>
     </header>
 

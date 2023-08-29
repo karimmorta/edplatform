@@ -1,0 +1,11 @@
+<div class="" id="<%= dom_id course %>">
+  <% if action_name != "show" %>
+    <p>Name: <%= course.name %></p>
+    <p>Description: <%= course.description %></p>
+    <p>Price: <%= course.price %></p>
+    <%= link_to "Show this course", admin_course_url(course), class: "rounded-lg py-3 px-5 bg-blue-400 inline-block font-medium" %>
+    <%= link_to 'Edit this course', edit_admin_course_path(course), class: "rounded-lg py-3 ml-2 px-5 bg-green-400 inline-block font-medium" %>
+    <%= link_to 'Delete this course', admin_course_path(course), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure you want to delete the course ?'}, class: "rounded-lg py-3 ml-2 px-5 bg-red-400 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
